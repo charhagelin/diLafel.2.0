@@ -1,0 +1,18 @@
+.flex-container__footer {
+    /* display: flex-flow; */
+    width: 100%;
+    height: 250px;
+    background-color:#baaa99;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    /* z-index: -1; */
+}
+
+.mid-line {
+    /* z-index: 2; */
+    margin-left: 50%;
+    padding-top: 5%;
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+}

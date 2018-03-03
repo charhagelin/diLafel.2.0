@@ -1,0 +1,14 @@
+.navbar {
+    background-color:#baaa99;
+}
+
+nav .brand-logo {
+    float:left;
+    padding-left: 15px;
+    position: relative;
+}
+
+img {
+    height: 70px;
+}
+
