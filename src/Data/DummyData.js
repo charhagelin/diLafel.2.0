@@ -30,7 +30,7 @@ const items = {
         desc: 'Tahini, also known as Ardeh, is a condiment made from toasted ground hulled sesame seeds. Perfect dressing to any salad or used as a dip',
         price: 15,
         unit: 'kg',
-        image: 'http://res.cloudinary.com/charhagelin/image/upload/v1520149413/green-falafel-mix_cim6y2.jpg',
+        image: 'http://res.cloudinary.com/charhagelin/image/upload/v1520149135/tahini_sju671.jpg',
         tags: ['dip', 'sesame seed', 'raw', 'vegan', 'vegetarian']
     },
     item5: {
@@ -57,6 +57,6 @@ const items = {
         image: 'http://res.cloudinary.com/charhagelin/image/upload/v1520149134/tabouli2_ljwlun.jpg',
         tags: ['salad', 'bulgur', 'raw', 'vegan', 'vegetarian']
     }
-}
+};
 
 export default items;

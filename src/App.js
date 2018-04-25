@@ -4,17 +4,26 @@ import Home from './Components/Home';
 import Products from './Components/Products';
 import Nav from './Components/Nav';
 import Footer from './Components/Footer';
-import Carousel from './Components/Carousel';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
+
+
   render() {
     return (
       <div className="App">
         <Nav />
-        <Home />
-        <Carousel />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/products" component={Products} />
+          <Route
+            render={() => {
+              return <p>404: Not Found</p>;
+            }} />
+        </Switch>
         <Footer />
       </div>
+
     );
   }
 }

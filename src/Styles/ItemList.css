@@ -1,0 +1,40 @@
+.itemlist-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;  
+    padding: 5% 5%;
+    background-color: #eae9e7;
+}
+
+.itemlist-container:first-child {
+    padding-top: 20%;
+    margin-top: -10%;
+}
+
+.itemlist-container:last-child {
+    padding-bottom: 20%;
+    margin-bottom: -10%;
+}
+
+.left-itemlist {
+    width: 40%;
+    flex-flow: column nowrap;
+}
+
+ .middle-itemlist {
+    width: 20%;
+    flex-flow: column nowrap;
+    font-weight: bold;
+} 
+
+.right-itemlist {
+    width: 30%;
+    flex-flow: column nowrap;
+}
+  
+.item-image {
+        height:100%;
+        width: 100%;  
+}
