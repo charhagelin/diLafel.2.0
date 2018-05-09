@@ -4,10 +4,27 @@
 }
 
 .desc-home {
-    margin: 50px 200px;
+    width: 70em;
     line-height: 2;
+    display: inline-block;
+    padding-top: 5em;
+    padding-bottom: 5em;
 }
 
 .sub-header-home {
     font-family: Andale Mono, monospace; 
+}
+
+.home-container {
+    margin-top: 6em;
+}
+
+.carousel img {
+    width: 70em;
+    height: 30em !important;
+
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: inline-block;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 import '../Styles/Order.css';
 
 class Order extends Component {
@@ -7,8 +8,9 @@ class Order extends Component {
         this.renderOrder = this.renderOrder.bind(this);
     }
 
-
+    
     renderOrder(key) {
+
         const item = this.props.items[key];
         const count = this.props.order[key];
 
@@ -23,7 +25,7 @@ class Order extends Component {
     }
 
     render() {
-
+        console.log('submitted' + this.props.value)
         const orderId = Object.keys(this.props.order)
         const total = orderId.reduce((prevTotal, key) => {
             const item = this.props.items[key];
@@ -45,3 +47,5 @@ class Order extends Component {
 }
 
 export default Order;
+
+

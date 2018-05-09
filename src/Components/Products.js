@@ -1,55 +1,77 @@
 import React, { Component } from 'react';
 import sampleItems from '../Data/DummyData';
-import Carousel from './Carousel';
+// import Carousel from './Carousel';
 import ItemList from './ItemList';
 import Order from './Order';
-// import SearchBar from './SearchBar';
-import '../Styles/Producs.css'
+import '../Styles/Products.css'
 
 class Products extends Component {
     constructor() {
         super()
 
         this.addToOrder = this.addToOrder.bind(this);
-        // this.showOrder = this.showOrder.bind(this);
+        this.handleChange = this.handleChange.bind(this);
 
         this.state = {
             items: {},
-            order: {}
+            order: {},
+            value: ''
         }
     }
 
     componentDidMount() {
-
         this.setState({
             items: sampleItems
         })
     }
 
+    handleChange(event) {
+        this.setState({value: event.target.value});
+        event.preventDefault();
+    }
+
+
+    // handleSubmit(event) {
+    //     console.log('submitted' + this.state.value);
+    //      event.preventDefault();
+    //      this.setState({
+    //          value: ''
+    //         })
+    //  }
+
     addToOrder(key) {
         //kopia av order ... är en spread funtion som tar kopia av state
         const order = { ...this.state.order };
-        order[key] = order[key] + 1 || 1;
+        order[key] = this.state.value; 
         this.setState({ order: order });
+        this.setState({
+            value: ''       //nollställer mitt state 
+           })
     }
-
-    // incrimentOrder(key) {
-    //     const order = { ...this.state.order };
-    //     order[key] = order[key] + 1;
-    //     this.setState({ order });
-    // }
 
 
     render() {
-        const items = this.state.items
+         const items = this.state.items
+         const value = this.state.value
+  
 
 
-        console.log('check me out ', this.state.items)
+       
         return (
             <div className="product-wrap">
                 <div className="product-item-container">
-                    {Object.keys(items).map(key => <ItemList key={key} index={key} items={this.state.items[key]} addToOrder={this.addToOrder} incrimentOrder={this.state.order} handleChange={this.handleChange} />)}
-                    <Order items={this.state.items} order={this.state.order} addToOrder={this.state.addToOrder} />
+                    {Object.keys(items).map(key => <ItemList 
+                        key={key} index={key} 
+                        items={this.state.items[key]} 
+                        addToOrder={(event) => this.addToOrder(event)} 
+                        value={this.state.value} 
+                        handleChange={this.handleChange}  />)}
+                    <Order 
+                        items={this.state.items} 
+                        order={this.state.order} 
+                        addToOrder={this.state.addToOrder} 
+                        value={this.state.value} 
+                     />
                 </div>
 
             </div>

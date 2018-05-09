@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "15.x",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "15.x",
-    "react-materialize": "^2.0.7",
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {

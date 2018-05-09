@@ -1,29 +1,21 @@
 import React, { Component } from 'react';
 import '../Styles/ItemList.css';
+import {Button } from 'react-bootstrap';
 
 class ItemList extends Component {
     constructor(props) {
         super(props);
 
-        this.handleChange = this.handleChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-
     }
 
-
-    handleChange(event) {
-        this.setState({ order: event.target.value });
-    }
-
-    onSubmit(event) {
-        console.log('the value ', this.event.value)
-    }
 
     render() {
         const item = this.props.items;
         const addToOrder = this.props.addToOrder;
         const order = this.props.order;
         const index = this.props.index;
+        const handleChange = this.props.handleChange;
+        const value = this.props.value;
 
 
         return (
@@ -39,12 +31,15 @@ class ItemList extends Component {
                 <div className="right-itemlist">
                     < img src={item.image} className="item-image" />
                 </div>
-                <button onClick={() => addToOrder(index)}>Add to cart</button>
-                <form onSubmit={this.addToOrder}>
-                    <input type="number" value={order} onChange={this.handleChange} />
-                    <input type="submit" value="add" />
+                
+                <form onSubmit={this.props.addToOrder}>
+                <label>Quantity</label>
+                <input type="number" 
+                    name= "quantity"
+                    value = {value}
+                    onChange = {handleChange}/>   
+                    <Button onClick={() => addToOrder(index)}>Add to cart</Button>
                 </form>
-
             </div>
 
         )
