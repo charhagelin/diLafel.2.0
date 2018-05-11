@@ -1,3 +1,16 @@
-#number {
+/* #number {
     width: 30px;
+} */
+
+
+.fa-times-circle {
+    margin: 0;
+    color: red;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+.order-list {
+    text-align: right;
 }

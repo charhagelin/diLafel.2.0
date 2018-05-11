@@ -38,3 +38,25 @@
         height:100%;
         width: 100%;  
 }
+
+.quantity-input {
+    width: 4em;
+    border-radius: 10%;
+    box-shadow: none;
+    border:1px solid #cccccc;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.quantity-form {
+    float: right;
+}
+
+.quantity-label {
+    font-family: serif;
+    padding-right: 10px;
+}
+
+.fa-cart-plus {
+    color: green;
+}

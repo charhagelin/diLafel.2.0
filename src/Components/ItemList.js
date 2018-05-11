@@ -30,16 +30,18 @@ class ItemList extends Component {
 
                 <div className="right-itemlist">
                     < img src={item.image} className="item-image" />
+                    <form onSubmit={this.props.addToOrder} className="quantity-form">
+                    <label className="quantity-label">Quantity :</label>
+                    <input className="quantity-input"
+                        type="number" 
+                        name= "quantity"
+                        value = {value}
+                        max={100}
+                        min={1}
+                        onChange = {handleChange}/>   
+                        <Button onClick={() => addToOrder(index)} bsSize="small"><i className="fas fa-cart-plus"></i></Button>
+                    </form>
                 </div>
-                
-                <form onSubmit={this.props.addToOrder}>
-                <label>Quantity</label>
-                <input type="number" 
-                    name= "quantity"
-                    value = {value}
-                    onChange = {handleChange}/>   
-                    <Button onClick={() => addToOrder(index)}>Add to cart</Button>
-                </form>
             </div>
 
         )
