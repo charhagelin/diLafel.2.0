@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import '../Styles/Order.css';
+import '../Styles/OrderList.css';
 
-class Order extends Component {
+class OrderList extends Component {
     constructor() {
         super()
+
         this.renderOrder = this.renderOrder.bind(this);
 
     }
@@ -17,10 +18,10 @@ class Order extends Component {
 
         if (count) {
             return (
-                <div>
-                    <p> {count} {item.unit} {item.name}                     
+                <div className="order">
+                    <li key={key}> {count} {item.unit} {item.name}                     
                       <i onClick={() => deleteItem(key)} className="far fa-times-circle"></i>
-                    </p>
+                    </li>
                 </div>
             )
         }
@@ -31,13 +32,13 @@ class Order extends Component {
         const total = orderId.reduce((prevTotal, key) => {
             const item = this.props.items[key];
             const count = this.props.order[key];
-            if (orderId) {
+            if (count) {
                 return prevTotal + (count * item.price || 0)
             }
             return prevTotal
         }, 0);
         return (
-            <div>
+            <div className="order">
              <strong>Total : ${total} </strong>
              <br />
              <hr />
@@ -49,6 +50,6 @@ class Order extends Component {
     }
 }
 
-export default Order;
+export default OrderList;
 
 

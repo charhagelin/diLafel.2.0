@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../Styles/Nav.css';
 import { Navbar, NavItem } from 'react-bootstrap';
 import logo from '../Images/white-logo.png';
-import Products from './Products';
+import ProductsPage from './ProductsPage';
+import OrderPage from './OrderPage';
 import { Link } from 'react-router-dom';
 
 class Nav extends Component {
@@ -17,6 +18,7 @@ class Nav extends Component {
                 </Navbar.Header>
                 <NavItem href='components.html'>Log In</NavItem>
                 <NavItem href='/products'><Link to="/products" >Products</Link></NavItem>
+                <NavItem href='/admin/add-new-item'><Link to="/admin/add-new-item" > Add new</Link></NavItem>
             </Navbar>
         )
     }
