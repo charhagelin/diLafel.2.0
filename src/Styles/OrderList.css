@@ -12,5 +12,11 @@
 
 
 .order-list {
-    text-align: right;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+.order-list-small {
+    margin-top: 10%;
 }
