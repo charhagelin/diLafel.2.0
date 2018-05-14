@@ -116,7 +116,7 @@ deleteItem(key) {
             }} />
 
           <Route path="/admin/add-new-item"
-            component={AddItemForm}
+            component={HomePage}
           />          
         </Switch>
         <Footer />
