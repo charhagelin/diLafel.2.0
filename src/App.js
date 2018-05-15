@@ -18,6 +18,8 @@ class App extends Component {
     this.addToOrder = this.addToOrder.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.addNewItem = this.addNewItem.bind(this);
+    this.deleteFromItemList = this.deleteFromItemList.bind(this);
 
     // this.incrementItem = this.incrementItem.bind(this);
 
@@ -27,7 +29,6 @@ class App extends Component {
         value: {}
     }
 }
-
 
 componentDidMount() {
 
@@ -61,6 +62,13 @@ handleChange(event) {
     event.preventDefault();
 }
 
+addNewItem(item) {
+  const items = {...this.state.items};
+  const timestamp = Date.now();
+  items[`item-${timestamp}`] = item;
+  this.setState({ items: items })
+}
+
 addToOrder(key) {
     //kopia av order ... är en spread funtion som tar kopia av state
     const order = { ...this.state.order };
@@ -71,11 +79,11 @@ addToOrder(key) {
        })
 }
 
-// deleteItem(key) {
-//     const order = {...this.state.order};
-//     order[key] = null
-//     this.setState({ order: order })
-// }
+deleteFromItemList(key) {
+    const items = {...this.state.items};
+    items[key] = null
+    this.setState({ items: items })
+}
 
 
 deleteItem(key) {
@@ -101,7 +109,8 @@ deleteItem(key) {
               addToOrder={(key) => this.addToOrder(key)} 
               value={this.state.value} 
               handleChange={this.handleChange}
-              deleteItem={this.deleteItem} />} />
+              deleteItem={this.deleteItem} 
+              deleteFromItemList = {(key) => this.deleteFromItemList(key)}/>} />
 
           <Route path="/order"
             render={() => <OrderPage        
@@ -110,14 +119,16 @@ deleteItem(key) {
             deleteItem={this.deleteItem}
             value={this.state.value}
             addToOrder={this.addToOrder} />} />
+
+          <Route exact path="/admin/add-new-item" 
+            render={() => <AddItemForm 
+                addNewItem={this.addNewItem} /> }/>     
+
           <Route
             render={() => {
               return <p>404: Not Found</p>;
             }} />
 
-          <Route path="/admin/add-new-item"
-            component={HomePage}
-          />          
         </Switch>
         <Footer />
       </div>

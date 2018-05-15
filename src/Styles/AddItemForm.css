@@ -1,3 +1,15 @@
 .add-new-form-container {
-    padding: 20% 20%;
+    padding: 10% 30%;
+}
+
+.new-item-form {
+    display: block;
+    text-align: center;
+}
+
+.new-item-input {
+    width: 100%;
+    border-radius: 8px;
+    border:1px solid #cccccc;
+
 }

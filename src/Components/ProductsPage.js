@@ -31,6 +31,7 @@ class ProductsPage extends Component {
                         value={this.props.value} 
                         handleChange={this.props.handleChange}
                         order={this.props.order} 
+                        deleteFromItemList ={(index) => this.props.deleteFromItemList(index)}
                         />)}
                 </div>
             </div>

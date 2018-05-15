@@ -16,6 +16,7 @@ class ItemList extends Component {
         const index = this.props.index;
         const handleChange = this.props.handleChange;
         const value = this.props.value;
+        const deleteFromItemList = this.props.deleteFromItemList;
 
         return (
             <div className="itemlist-container">
@@ -39,6 +40,11 @@ class ItemList extends Component {
                             min={1}
                             onChange = {handleChange}/>   
                             <Button onClick={() => addToOrder(this.props.index)} bsSize="small"><i className="fas fa-cart-plus"></i></Button>
+                            <Button onClick={() => deleteFromItemList(this.props.index)} bssSize="small" bsStyle="danger">
+                                 <i className="fas fa-times"></i>
+                            </Button>     
+
+
                         </form>
                     </div>
             </div>
