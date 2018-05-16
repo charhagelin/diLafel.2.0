@@ -24,7 +24,7 @@ class ProductsPage extends Component {
                     />
                 </Col>
                 <div className="product-item-container">          
-                    {Object.keys(this.props.items).map(key => <ItemList 
+                    {Object.keys(this.props.items).reverse().map(key => <ItemList 
                         key={key} index={key} 
                         items={this.props.items[key]} 
                         addToOrder={(index) => this.props.addToOrder(index)} 

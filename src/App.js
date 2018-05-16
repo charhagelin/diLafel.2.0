@@ -10,6 +10,7 @@ import sampleItems from './Data/DummyData';
 import ItemList from './Components/ItemList';
 import { base } from './base';
 import AddItemForm from './Components/AddItemForm';
+import AddNewPage from './Components/AddNewPage';
 
 class App extends Component {
   constructor() {
@@ -20,6 +21,7 @@ class App extends Component {
     this.deleteItem = this.deleteItem.bind(this);
     this.addNewItem = this.addNewItem.bind(this);
     this.deleteFromItemList = this.deleteFromItemList.bind(this);
+    this.editItem = this.editItem.bind(this);
 
     // this.incrementItem = this.incrementItem.bind(this);
 
@@ -85,6 +87,12 @@ deleteFromItemList(key) {
     this.setState({ items: items })
 }
 
+editItem(key, updatedItem) {
+  const items = {...this.state.items}
+  items[key] = updatedItem;
+  this.setState({ items })
+}
+
 
 deleteItem(key) {
   const order = {...this.state.order};
@@ -121,8 +129,10 @@ deleteItem(key) {
             addToOrder={this.addToOrder} />} />
 
           <Route exact path="/admin/add-new-item" 
-            render={() => <AddItemForm 
-                addNewItem={this.addNewItem} /> }/>     
+            render={() => <AddNewPage 
+              editItem = {this.editItem}
+              addNewItem={this.addNewItem}
+              items= {this.state.items} /> }/>     
 
           <Route
             render={() => {

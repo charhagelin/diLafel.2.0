@@ -1,0 +1,23 @@
+.edit-item-form {
+    display: block;
+    border:1px solid #cccccc;
+    border-radius: 8px;
+    width: 100%; 
+}
+
+.edit-item-form:last-child {
+    margin-bottom: 10%;
+}
+.edit-item-form-textarea {
+    height: 100px;
+    display: block;
+    border:1px solid #cccccc;
+    border-radius: 0 8px;
+    width: 100%;  
+}
+
+.add-item-form-container {
+    padding: 20% 30%;
+    text-align: center;
+
+}

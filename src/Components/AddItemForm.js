@@ -19,29 +19,34 @@ class AddItemForm extends Component {
             image: this.image.value
         }
         this.props.addNewItem(item);
+        alert('Item has been added!');
+        this.itemForm.reset();
     }
 
     render() {   
     return (
         <div className="add-new-form-container">
-            <h2 className="add-new-form-container">Right here</h2>
-            <form className="new-item-form" onSubmit={(e) => this.createItem(e)}>
+            <h2 className="headline__add-new-form">Add a new item to the shop:</h2>
+            <form className="new-item-form" ref={(input) => this.itemForm = (input)} onSubmit={(e) => this.createItem(e)}>
                 <input
                     className="new-item-input"
                     ref={(input) => this.name = input}
                     type="text"
-                    placeholder="name" />
+                    placeholder="name"
+                    required  />
                 <textarea
                     className="new-item-input"
                     ref={(input) => this.desc = input}
                     type="textarea"
-                    placeholder="Description">
+                    placeholder="Description"
+                    required >
                 </textarea >
                 <input
                     className="new-item-input"
                     ref={(input) => this.price = input}
                     type="number"
-                    placeholder="Price" />
+                    placeholder="Price" 
+                    required />
                 <input
                     className="new-item-input"
                     ref={(input) => this.tags = input}
@@ -50,14 +55,18 @@ class AddItemForm extends Component {
                 <select 
                  className="new-item-input"
                     placeholder="select"
-                    ref={(input) => this.unit = input}>
-                    <option value="select">Kg</option>
-                    <option value="other">Box</option>
+                    ref={(input) => this.unit = input}
+                    required >
+                    <option>...</option>
+                    <option value="Kg">Kg</option>
+                    <option value="Box">Box</option>
                 </select>
                 <input
                     className="new-item-input"
                     ref={(input) => this.image = input}
-                    type="text" />
+                    type="text"
+                    placeholder="image URL"
+                    required  />
                 <Button type="submit" >+ Add Item</Button>         
             </form>
         </div>
