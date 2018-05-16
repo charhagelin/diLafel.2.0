@@ -1,23 +1,36 @@
 .edit-item-form {
     display: block;
     border:1px solid #cccccc;
-    border-radius: 8px;
     width: 100%; 
 }
 
-.edit-item-form:last-child {
-    margin-bottom: 10%;
-}
 .edit-item-form-textarea {
-    height: 100px;
+    padding: 5%;
+    /* height: 100px; */
     display: block;
     border:1px solid #cccccc;
-    border-radius: 0 8px;
     width: 100%;  
 }
 
 .add-item-form-container {
-    padding: 20% 30%;
+    padding: 10% 30%;
     text-align: center;
-
 }
+
+.edit-item-form {
+    padding: 5%;
+}
+
+.inventory-form {
+    margin-bottom: 10%;
+}
+
+.inventory-form-container hr {
+   border: 1.5px solid black;
+}
+
+.add-item-form-container h2 {
+    font-family: 'Cinzel', serif;
+}
+
+/* border-radius: 0 0 8px 8px; */
