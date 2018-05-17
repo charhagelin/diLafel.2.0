@@ -8,9 +8,10 @@ import { Switch, Route } from 'react-router-dom';
 import OrderPage from './Components/OrderPage';
 import sampleItems from './Data/DummyData';
 import ItemList from './Components/ItemList';
-import { base } from './base';
+import { app, base } from './base';
 import AddItemForm from './Components/AddItemForm';
 import AddNewPage from './Components/AddNewPage';
+import LoginPage from './Components/LoginPage';
 
 class App extends Component {
   constructor() {
@@ -28,7 +29,10 @@ class App extends Component {
     this.state = {
         items: {},
         order: {},
-        value: {}
+        value: {},
+        authenticated: false,
+        user: {},
+        loading: true
     }
 }
 
@@ -37,6 +41,21 @@ componentDidMount() {
   this.setState({
     items: sampleItems
 })
+
+this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
+  if (user) {
+    this.setState({
+      authenticated: true,
+      loading: false
+    })
+    }  else {
+        this.setState({
+        authenticated: false,
+        loading: false
+      })
+  }
+})
+
   this.ref = base.syncState('items', {
     context:this,
     state: 'items'
@@ -52,6 +71,7 @@ componentDidMount() {
 }
 
 componentWillUnmount() {
+    this.removeAuthListener();
     base.removeBinding(this.ref)
 }
 
@@ -102,15 +122,26 @@ deleteItem(key) {
 
 
 
+
   render() {
+    if (this.state.loading === true ) {
+      return (
+        <div>
+            <h3>Loading...</h3>
+            <i className="fas fa-spinner"></i>
+        </div>
+      )
+    }
     return (
       <div className="App">
-        <Nav />
+        <Nav authenticated = {this.state.authenticated} />
         <Switch>
           <Route exact path="/" component={HomePage} />
 
-          <Route path="/products" 
-             render={() => <ProductsPage
+          {this.state.authenticated ?
+            <div>
+              <Route path="/products" 
+              render={() => <ProductsPage
               order={this.state.order}
               deleteItem={this.deleteItem}
               items={this.state.items} 
@@ -120,19 +151,36 @@ deleteItem(key) {
               deleteItem={this.deleteItem} 
               deleteFromItemList = {(key) => this.deleteFromItemList(key)}/>} />
 
-          <Route path="/order"
-            render={() => <OrderPage        
-            items={this.state.items} 
-            order={this.state.order}
-            deleteItem={this.deleteItem}
-            value={this.state.value}
-            addToOrder={this.addToOrder} />} />
+              <Route path="/order"
+                render={() => <OrderPage        
+                items={this.state.items} 
+                order={this.state.order}
+                deleteItem={this.deleteItem}
+                value={this.state.value}
+                addToOrder={this.addToOrder} />} />
 
-          <Route exact path="/admin/add-new-item" 
-            render={() => <AddNewPage 
-              editItem = {this.editItem}
-              addNewItem={this.addNewItem}
-              items= {this.state.items} /> }/>     
+                <Route exact path="/admin/add-new-item" 
+                render={() => <AddNewPage 
+                  editItem = {this.editItem}
+                  addNewItem={this.addNewItem}
+                  items= {this.state.items} /> }/>  
+            </div>
+
+              :  
+              <div>
+                <Route path="/login" 
+                 render={() => <LoginPage 
+                    user={this.state.user}
+                  /> }/> 
+                <Route
+                render={() => {
+                  return <p>404: Not Found</p>;
+                }} />
+              </div>   
+            }
+    
+
+            
 
           <Route
             render={() => {

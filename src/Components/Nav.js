@@ -15,10 +15,16 @@ class Nav extends Component {
                  <Navbar.Brand>
                     <a href='/'  ><img src={logo} /></a>
                  </Navbar.Brand>
-                </Navbar.Header>
-                <NavItem href='components.html'>Log In</NavItem>
-                <NavItem href='/products'><Link to="/products" >Products</Link></NavItem>
-                <NavItem href='/admin/add-new-item'><Link to="/admin/add-new-item" > Add new</Link></NavItem>
+            </Navbar.Header>
+
+                {this.props.authenticated ? 
+                   <div>
+                        <NavItem href='/admin/add-new-item'><Link to="/admin/add-new-item" > Add new</Link></NavItem>
+                        <NavItem href='/products'><Link to="/products" >Products</Link></NavItem>
+                   </div> 
+                    
+                    :  <NavItem href='/login'><Link to="/login" >Login/ Register</Link></NavItem>
+                } 
             </Navbar>
         )
     }
