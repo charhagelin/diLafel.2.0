@@ -1,0 +1,35 @@
+.inventory-container {
+    background-color: #eae9e7;
+    padding: 10%;
+}
+
+.edit-item-form {
+    display: block;
+    border:1px solid #cccccc;
+    width: 100%; 
+
+}
+
+.edit-item-form-textarea {
+    padding: 5%;
+    /* height: 100px; */
+    display: block;
+    border:1px solid #cccccc;
+    width: 100%;  
+}
+
+.edit-item-form {
+    padding: 5%;
+}
+
+.inventory-form {
+    margin-bottom: 10%;
+}
+
+.inventory-form-container hr {
+   border: 1.5px solid black;
+}
+
+.add-item-form-container h2 {
+    font-family: 'Cinzel', serif;
+}

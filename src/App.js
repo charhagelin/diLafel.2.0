@@ -12,6 +12,7 @@ import { app, base } from './base';
 import AddItemForm from './Components/AddItemForm';
 import AddNewPage from './Components/AddNewPage';
 import LoginPage from './Components/LoginPage';
+import LogOut from './Components/LogOut';
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,7 @@ class App extends Component {
     this.addNewItem = this.addNewItem.bind(this);
     this.deleteFromItemList = this.deleteFromItemList.bind(this);
     this.editItem = this.editItem.bind(this);
+    // this.signOut = this.signOut.bind(this);
 
     // this.incrementItem = this.incrementItem.bind(this);
 
@@ -31,7 +33,6 @@ class App extends Component {
         order: {},
         value: {},
         authenticated: false,
-        user: {},
         loading: true
     }
 }
@@ -120,6 +121,9 @@ deleteItem(key) {
   this.setState({order: order})
 }
 
+// singOut() {
+//   app.auth().singOut();
+// }
 
 
 
@@ -134,22 +138,24 @@ deleteItem(key) {
     }
     return (
       <div className="App">
-        <Nav authenticated = {this.state.authenticated} />
+        <Nav 
+          authenticated = {this.state.authenticated} 
+         />
         <Switch>
           <Route exact path="/" component={HomePage} />
 
           {this.state.authenticated ?
             <div>
               <Route path="/products" 
-              render={() => <ProductsPage
-              order={this.state.order}
-              deleteItem={this.deleteItem}
-              items={this.state.items} 
-              addToOrder={(key) => this.addToOrder(key)} 
-              value={this.state.value} 
-              handleChange={this.handleChange}
-              deleteItem={this.deleteItem} 
-              deleteFromItemList = {(key) => this.deleteFromItemList(key)}/>} />
+                render={() => <ProductsPage
+                order={this.state.order}
+                deleteItem={this.deleteItem}
+                items={this.state.items} 
+                addToOrder={(key) => this.addToOrder(key)} 
+                value={this.state.value} 
+                handleChange={this.handleChange}
+                deleteItem={this.deleteItem} 
+                deleteFromItemList = {(key) => this.deleteFromItemList(key)}/>} />
 
               <Route path="/order"
                 render={() => <OrderPage        
@@ -159,29 +165,18 @@ deleteItem(key) {
                 value={this.state.value}
                 addToOrder={this.addToOrder} />} />
 
-                <Route exact path="/admin/add-new-item" 
-                render={() => <AddNewPage 
+              <Route exact path="/admin/add-new-item" 
+                  render={() => <AddNewPage 
                   editItem = {this.editItem}
                   addNewItem={this.addNewItem}
                   items= {this.state.items} /> }/>  
+
+              <Route exact path="/logout" component={LogOut} />
             </div>
 
               :  
-              <div>
-                <Route path="/login" 
-                 render={() => <LoginPage 
-                    user={this.state.user}
-                  /> }/> 
-                <Route
-                render={() => {
-                  return <p>404: Not Found</p>;
-                }} />
-              </div>   
+                <Route exact path="/login" component= {LoginPage} /> 
             }
-    
-
-            
-
           <Route
             render={() => {
               return <p>404: Not Found</p>;

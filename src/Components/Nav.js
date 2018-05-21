@@ -4,7 +4,7 @@ import { Navbar, NavItem } from 'react-bootstrap';
 import logo from '../Images/white-logo.png';
 import ProductsPage from './ProductsPage';
 import OrderPage from './OrderPage';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Nav extends Component {
 
@@ -18,8 +18,9 @@ class Nav extends Component {
             </Navbar.Header>
 
                 {this.props.authenticated ? 
-                   <div>
-                        <NavItem href='/admin/add-new-item'><Link to="/admin/add-new-item" > Add new</Link></NavItem>
+                   <div>                       
+                         <NavItem href='/logout'><Link to="/logout"><i className="fas fa-sign-out-alt"></i></Link></NavItem>
+                        <NavItem href='/admin/add-new-item'><Link to="/admin/add-new-item" > Add <i className="fas fa-plus"></i></Link></NavItem>
                         <NavItem href='/products'><Link to="/products" >Products</Link></NavItem>
                    </div> 
                     
