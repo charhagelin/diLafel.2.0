@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import { Col, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import '../Styles/AddItemForm.css';
 
 class AddItemForm extends Component {
-    constructor() {
-        super()
-    }
-
     
     createItem(event) {
         event.preventDefault();

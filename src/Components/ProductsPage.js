@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import sampleItems from '../Data/DummyData';
+// import sampleItems from '../Data/DummyData';
 // import Carousel from './Carousel';
 import ItemList from './ItemList';
-import OrderPage from './OrderPage';
+// import OrderPage from './OrderPage';
 import OrderList from './OrderList';
 import '../Styles/ProductsPage.css';
 import {Link} from 'react-router-dom';

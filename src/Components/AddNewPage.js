@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import AddItemForm from './AddItemForm';
 import Inventory from './Inventory';
-import { Col, Row } from 'react-bootstrap';
+// import { Col, Row } from 'react-bootstrap';
 import '../Styles/AddNewPage.css'
 
 class AddNewPage extends Component {

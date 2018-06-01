@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import '../Styles/LoginForm.css';
-import { app, base } from '../base';
+import { app } from '../base';
 import { Redirect } from 'react-router-dom';
-import { Col, Row, Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -37,6 +37,8 @@ class LoginForm extends Component {
                     if (user && user.email) {
                         this.loginForm.reset();
                         this.setState({redirect : true})
+                        this.props.setCurrentUSer(user)
+
                     }
                 })
                 .catch((error) =>  {
@@ -45,8 +47,10 @@ class LoginForm extends Component {
     }
 
     render() {
+
+        // const { from } = this.props.location.state || { from: { pathname: '/'} }
         if (this.state.redirect === true) {
-            return <Redirect to="/" />
+            return <Redirect to='/' />
         }
         return(
             <div>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import LoginForm from './LoginForm';
 import '../Styles/LoginPage.css';
-import {Col, Row} from 'react-bootstrap';
+// import {Col, Row} from 'react-bootstrap';
 
 class LoginPage extends Component {
     render(){
@@ -9,7 +9,9 @@ class LoginPage extends Component {
             <div className="login-page-container">
 
                 <h3>Log in</h3>
-                <LoginForm />
+                <LoginForm 
+                    setCurrentUser= {this.props.setCurrentUser}
+                />
             </div>
         )
     }

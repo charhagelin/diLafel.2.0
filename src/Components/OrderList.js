@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import '../Styles/OrderList.css';
 
 class OrderList extends Component {
@@ -39,12 +38,12 @@ class OrderList extends Component {
         }, 0);
         return (
             <div className="order">
-             <strong>Total : ${total} </strong>
-             <br />
-             <hr />
-                <li className="order-list">
-                    {orderId.map(this.renderOrder)}
-                </li>
+                <strong>Total : ${total} </strong>
+                <br />
+                <hr />
+                    <div className="order-list">
+                        {orderId.map(this.renderOrder)}
+                    </div>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import AddItemForm from './AddItemForm';
-import { Col, Row, Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+// import AddItemForm from './AddItemForm';
+import { Col, Row } from 'react-bootstrap';
 import '../Styles/Inventory.css'
 
 class Inventory extends Component {
@@ -11,11 +11,12 @@ class Inventory extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e, key) {
+    handleChange(event, key) {
+        event.preventDefault();
         const item = this.props.items[key];
         const updatedItem = {
             ...item,
-             [e.target.name]: e.target.value
+             [event.target.name]: event.target.value
             }
         this.props.editItem(key, updatedItem)
     }
@@ -26,36 +27,36 @@ class Inventory extends Component {
 
         return (
             <div key={key} className="inventory-form-container">
-                <Form className="inventory-form" >
+                <form className="inventory-form" >
                     <Row>
                         <Col xs={6} md={4}>
-                        <ControlLabel>Name</ControlLabel>
+                        <label>Name</label>
 
-                        <FormControl className="edit-item-form"
+                        <input className="edit-item-form"
                             value={item.name}
                             name="name"
-                            onChange={(e) => this.handleChange(e, key)}
+                            onChange={(event) => this.handleChange(event, key)}
                             type="text"
                             placeholder="name" />
                         </Col>
                         <Col xs={6} md={4}>   
-                        <ControlLabel>Price</ControlLabel>
+                        <label>Price</label>
   
-                            <FormControl className="edit-item-form"
+                            <input className="edit-item-form"
                                 value={item.price}
                                 name= "price"
-                                onChange={(e) => this.handleChange(e, key)}
+                                onChange={(event) => this.handleChange(event, key)}
                                 type="number"
                                 placeholder="Price" 
                             />
                         </Col>
                         <Col xs={6} md={4}>  
-                        <ControlLabel>Unit</ControlLabel>
+                        <label>Unit</label>
     
                             <select className="edit-item-form"
                                 value={item.unit}
                                 name= "unit"
-                                onChange={(e) => this.handleChange(e, key)} 
+                                onChange={(event) => this.handleChange(event, key)} 
                                 placeholder="select"
                             >
                             <option>...</option>
@@ -64,41 +65,42 @@ class Inventory extends Component {
                         </select>
                         </Col>     
                     </Row>   
-                    <ControlLabel>Description</ControlLabel>
+                    <label>Description</label>
      
                     <textarea className="edit-item-form-textarea"
                         value={item.desc}
+                        type="text"
                         name= "desc"
-                        onChange={(e) => this.handleChange(e, key)}
-                        type="textarea"
+                        onChange={(event) => this.handleChange(event, key)}
                         placeholder="Description"
                         >
-                    </textarea >
+                     </textarea >   
+                   
                   <Row>
                     <Col sm={12} md={6}>
-                    <ControlLabel>Tags</ControlLabel>
+                    <label>Tags</label>
 
-                        <FormControl className="edit-item-form"
+                        <input className="edit-item-form"
                         value={item.tags}
                         name= "tags"
-                        onChange={(e) => this.handleChange(e, key)}
+                        onChange={(event) => this.handleChange(event, key)}
                         type="text"
                         placeholder="Tags" />
                     </Col>    
                     <Col sm={12} md={6}>
-                    <ControlLabel>image URL</ControlLabel>
+                    <label>image URL</label>
 
-                        <FormControl className="edit-item-form"
+                        <input className="edit-item-form"
                         value={item.image}
                         name= "image"
-                        onChange={(e) => this.handleChange(e, key)}
+                        onChange={(event) => this.handleChange(event, key)}
                         type="text"
                         placeholder="image URL"
                         />
                     </Col>    
                  </Row>
                  <hr />
-                </Form>
+                </form>
                 <hr />
             </div>
         ) 

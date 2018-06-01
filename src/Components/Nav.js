@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 import '../Styles/Nav.css';
 import { Navbar, NavItem } from 'react-bootstrap';
 import logo from '../Images/white-logo.png';
-import ProductsPage from './ProductsPage';
-import OrderPage from './OrderPage';
-import { Link, Redirect } from 'react-router-dom';
+// import ProductsPage from './ProductsPage';
+// import OrderPage from './OrderPage';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
 
     render() {
         return (
-            <Navbar inverse fixedTop='true' >
+            <Navbar inverse fixedTop={true} >
                 <Navbar.Header>
                  <Navbar.Brand>
-                    <a href='/'  ><img src={logo} /></a>
+                    <a href='/'  ><img src={logo} alt="Logo"/></a>
                  </Navbar.Brand>
             </Navbar.Header>
 
                 {this.props.authenticated ? 
                    <div>                       
-                         <NavItem href='/logout'><Link to="/logout"><i className="fas fa-sign-out-alt"></i></Link></NavItem>
-                        <NavItem href='/admin/add-new-item'><Link to="/admin/add-new-item" > Add <i className="fas fa-plus"></i></Link></NavItem>
-                        <NavItem href='/products'><Link to="/products" >Products</Link></NavItem>
+                        <NavItem href='/logout' title="Sign out"><i className="fas fa-sign-out-alt"></i></NavItem>
+                        <NavItem href='/admin/add-new-item'> Add <i className="fas fa-plus"></i></NavItem>
+                        <NavItem href='/products'>Products</NavItem>
                    </div> 
                     
                     :  <NavItem href='/login'><Link to="/login" >Login/ Register</Link></NavItem>

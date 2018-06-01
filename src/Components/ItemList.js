@@ -3,17 +3,14 @@ import '../Styles/ItemList.css';
 import {Button } from 'react-bootstrap';
 
 class ItemList extends Component {
-    constructor(props) {
-        super(props);
-
-    }
+  
 
     render() {
         // const items = Object.keys(this.props.items);
         const item = this.props.items
         const addToOrder = this.props.addToOrder;
-        const order = this.props.order;
-        const index = this.props.index;
+        // const order = this.props.order;
+        // const index = this.props.index;
         const handleChange = this.props.handleChange;
         const value = this.props.value;
         const deleteFromItemList = this.props.deleteFromItemList;
@@ -29,22 +26,20 @@ class ItemList extends Component {
                     </div>
 
                     <div className="right-itemlist">
-                        < img src={item.image} className="item-image" />
+                        < img src={item.image} className="item-image" alt="Product_imag" />
                         <form onSubmit={this.props.addToOrder} className="quantity-form">
                         <label className="quantity-label">Quantity :</label>
                         <input className="quantity-input"
                             type="number" 
-                            name= "quantity"
-                            value = {value}
+                            name="quantity"
+                            value={value}
                             max={100}
                             min={1}
-                            onChange = {handleChange}/>   
+                            onChange={handleChange}/>   
                             <Button onClick={() => addToOrder(this.props.index)} bsSize="small"><i className="fas fa-cart-plus"></i></Button>
-                            <Button onClick={() => deleteFromItemList(this.props.index)} bssSize="small" bsStyle="danger">
+                            <Button onClick={() => deleteFromItemList(this.props.index)} bsSize="small" bsStyle="danger">
                                  <i className="fas fa-times"></i>
                             </Button>     
-
-
                         </form>
                     </div>
             </div>

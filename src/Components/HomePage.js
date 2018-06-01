@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import { diLafel } from '../Images/diLafel.jpg';
+// import { diLafel } from '../Images/diLafel.jpg';
 // import Carousel from './Carousel';
 import '../Styles/Home.css';
 
