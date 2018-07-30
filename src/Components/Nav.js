@@ -12,19 +12,18 @@ class Nav extends Component {
         return (
             <Navbar inverse fixedTop={true} >
                 <Navbar.Header>
-                 <Navbar.Brand>
+                <Navbar.Brand>
                     <a href='/'  ><img src={logo} alt="Logo"/></a>
-                 </Navbar.Brand>
-            </Navbar.Header>
+                </Navbar.Brand>
+                </Navbar.Header>
 
                 {this.props.authenticated ? 
-                   <div>                       
-                        <NavItem href='/logout' title="Sign out"><i className="fas fa-sign-out-alt"></i></NavItem>
-                        <NavItem href='/admin/add-new-item'> Add <i className="fas fa-plus"></i></NavItem>
-                        <NavItem href='/products'>Products</NavItem>
-                   </div> 
-                    
-                    :  <NavItem href='/login'><Link to="/login" >Login/ Register</Link></NavItem>
+                <div>                       
+                    <NavItem href='/logout' title="Sign out"><i className="fas fa-sign-out-alt"></i></NavItem>
+                    <NavItem href='/admin/add-new-item'> Add <i className="fas fa-plus"></i></NavItem>
+                    <NavItem href='/products'>Products</NavItem>
+                </div>  
+                :  <NavItem href='/login'><Link to="/login" >Login/ Register</Link></NavItem>
                 } 
             </Navbar>
         )

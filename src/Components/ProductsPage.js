@@ -24,15 +24,15 @@ class ProductsPage extends Component {
                     />
                 </Col>
                 <div className="product-item-container">          
-                    {Object.keys(this.props.items).reverse().map(key => <ItemList 
+                    {Object.keys(this.props.items).map(key => <ItemList 
                         key={key} index={key} 
                         items={this.props.items[key]} 
-                        addToOrder={(index) => this.props.addToOrder(index)} 
+                        addToOrder={(index, e) => this.props.addToOrder(index, e)} 
                         value={this.props.value} 
-                        handleChange={this.props.handleChange}
+                        submitChange={(event) => this.props.submitChange(event)}
                         order={this.props.order} 
                         deleteFromItemList ={(index) => this.props.deleteFromItemList(index)}
-                        />)}
+                        />)}   
                 </div>
             </div>
         )

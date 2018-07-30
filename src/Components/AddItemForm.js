@@ -29,25 +29,28 @@ class AddItemForm extends Component {
                     ref={(input) => this.name = input}
                     type="text"
                     placeholder="name"
-                    required  />
+                    required  
+                />
                 <textarea
                     className="new-item-input"
                     ref={(input) => this.desc = input}
                     type="textarea"
                     placeholder="Description"
                     required >
-                </textarea >
+                </textarea>
                 <input
                     className="new-item-input"
                     ref={(input) => this.price = input}
                     type="number"
                     placeholder="Price" 
-                    required />
+                    required 
+                />
                 <input
                     className="new-item-input"
                     ref={(input) => this.tags = input}
                     type="text"
-                    placeholder="Tags" />
+                    placeholder="Tags" 
+                />
                 <select 
                  className="new-item-input"
                     placeholder="select"
@@ -62,7 +65,8 @@ class AddItemForm extends Component {
                     ref={(input) => this.image = input}
                     type="text"
                     placeholder="image URL"
-                    required  />
+                    required
+                />
                 <Button type="submit" >+ Add Item</Button>         
             </form>
         </div>

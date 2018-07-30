@@ -41,9 +41,9 @@ class OrderList extends Component {
                 <strong>Total : ${total} </strong>
                 <br />
                 <hr />
-                    <div className="order-list">
-                        {orderId.map(this.renderOrder)}
-                    </div>
+                <div className="order-list">
+                    {orderId.map(this.renderOrder)}
+                </div>
             </div>
         )
     }
