@@ -1,0 +1,27 @@
+.add-new-form-container {
+  padding: 10% 20%;
+  /* border: 2px solid black ; */
+  border-style: double;
+  margin-bottom: 15%;
+}
+
+.new-item-form {
+  display: block;
+  text-align: center;
+}
+
+.new-item-input {
+  width: 100%;
+  padding: 2%;
+  border: 1px solid #cccccc;
+}
+
+.headline__add-new-form {
+  padding: 10% 5%;
+}
+
+.add-new-form-container h2 {
+  font-family: "Cinzel", serif;
+}
+
+/*# sourceMappingURL=AddItemForm.css.map */

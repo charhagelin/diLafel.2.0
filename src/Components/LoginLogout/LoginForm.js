@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../Styles/LoginForm.css";
+import "../../styles/css/LoginForm.css";
 import { app } from "../../base";
 import { Redirect } from "react-router-dom";
 import { Button } from "react-bootstrap";

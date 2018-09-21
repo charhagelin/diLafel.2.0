@@ -1,48 +1,20 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
-// import { diLafel } from '../Images/diLafel.jpg';
-// import Carousel from './Carousel';
-import "../../Styles/Home.css";
+
+import { diLafel } from '../../Images/diLafel.jpg';
+
+import "../../styles/css/Home.css";
 
 const HomePage = () => {
   return (
-    <div className="home-container">
-      <Carousel>
-        <Carousel.Item>
-          <img
-            alt="900x500"
-            src="http://res.cloudinary.com/charhagelin/image/upload/v1520100665/herbs_lbu5os.jpg"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            alt="900x500"
-            src="http://res.cloudinary.com/charhagelin/image/upload/v1520101147/cilantro-header_qgihs6.jpg"
-          />
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            alt="900x500"
-            src="http://res.cloudinary.com/charhagelin/image/upload/v1520101132/garlic_jmcznm.jpg"
-          />
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-
-      <p className="desc-home">
+    <div className="home-container-wrapper">
+      <section className="image-section-1">
+      <img src="https://www.theprairiehomestead.com/wp-content/uploads/2015/07/homemade-herb-salt-recipe-2.jpg" alt="placeholder image"/>
+      </section>
+      <section className="image-section-2">
+      <img src="https://www.chatelaine.com/wp-content/uploads/2017/07/Peach-and-chicken-couscous-salad-1-e1499280052531.jpg" />
+      </section>
+     
+      <p className="desc-home-paragraph">
         One morning, when Gregor Samsa woke from troubled dreams, he found
         himself transformed in his bed into a horrible vermin. He lay on his
         armour-like back, and if he lifted his head a little he could see his
@@ -65,3 +37,39 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+// <Carousel>
+// <Carousel.Item>
+//   <img
+//     alt="900x500"
+//     src="http://res.cloudinary.com/charhagelin/image/upload/v1520100665/herbs_lbu5os.jpg"
+//   />
+//   <Carousel.Caption>
+//     <h3>First slide label</h3>
+//     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+//   </Carousel.Caption>
+// </Carousel.Item>
+// <Carousel.Item>
+//   <img
+//     alt="900x500"
+//     src="http://res.cloudinary.com/charhagelin/image/upload/v1520101147/cilantro-header_qgihs6.jpg"
+//   />
+//   <Carousel.Caption>
+//     <h3>Second slide label</h3>
+//     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+//   </Carousel.Caption>
+// </Carousel.Item>
+// <Carousel.Item>
+//   <img
+//     alt="900x500"
+//     src="http://res.cloudinary.com/charhagelin/image/upload/v1520101132/garlic_jmcznm.jpg"
+//   />
+//   <Carousel.Caption>
+//     <h3>Third slide label</h3>
+//     <p>
+//       Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+//     </p>
+//   </Carousel.Caption>
+// </Carousel.Item>
+// </Carousel>

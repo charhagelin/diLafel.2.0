@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../Styles/OrderList.css";
+import "../../styles/css/OrderList.css";
 
 class OrderList extends Component {
   constructor() {
