@@ -9,8 +9,6 @@
     margin-left: 5px;
     cursor: pointer;
 }
-
-
 .order-list {
     text-align: center;
     margin-top: 5%;
@@ -18,5 +16,24 @@
 
 
 .order-list-small {
+    list-style : none;
     margin-top: 10%;
+}
+.order-list-small li {
+    float: right;
+    padding-bottom: 10px;
+}
+
+
+.orderlist-container {
+    width: 100%;
+    align-content: center;
+    padding-bottom: 15%;
+}
+
+.orderlist-container li {
+    font-size: 17px;
+    list-style : none;
+    text-align: center;
+    padding-bottom: 10px;
 }

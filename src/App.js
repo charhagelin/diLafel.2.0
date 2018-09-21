@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
-import HomePage from "./Components/HomePage";
-import ProductsPage from "./Components/ProductsPage";
+import HomePage from "./Components/Home/HomePage";
+import ProductsPage from "./Components/Products/ProductsPage";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 import { Switch, Route, Redirect } from "react-router-dom";
-import OrderPage from "./Components/OrderPage";
+import OrderPage from "./Components/Order/OrderPage";
 import sampleItems from "./Data/DummyData";
 // import ItemList from './Components/ItemList';
 import { app, base } from "./base";
 // import AddItemForm from './Components/AddItemForm';
-import AddNewPage from "./Components/AddNewPage";
-import LoginPage from "./Components/LoginPage";
-import LogOut from "./Components/LogOut";
+import AddNewPage from "./Components/AddNewItem/AddNewPage";
+import LoginPage from "./Components/LoginLogout/LoginPage";
+import LogOut from "./Components/LoginLogout/LogOut";
 
 class App extends Component {
   constructor() {
@@ -193,6 +193,7 @@ class App extends Component {
             exact
             path="/order"
             component={OrderPage}
+            currentUser={this.state.currentUser}
             authenticated={this.state.authenticated}
             items={this.state.items}
             order={this.state.order}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import AddItemForm from './AddItemForm';
 import { Col, Row } from "react-bootstrap";
-import "../Styles/Inventory.css";
+import "../../Styles/Inventory.css";
 
 class Inventory extends Component {
   constructor() {

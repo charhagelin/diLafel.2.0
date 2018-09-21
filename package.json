@@ -8,7 +8,10 @@
     "react": "15.x",
     "react-bootstrap": "^0.32.1",
     "react-dom": "15.x",
-    "react-router-dom": "^4.2.2"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "react-scripts": "1.1.1"
