@@ -1,28 +1,14 @@
-.navbar-inverse {
-    background-color:#baaa99 !important;
-    padding-bottom: 0;
-    border-color: #baaa99;
-    border-radius: 0;
-    margin-bottom: 0;
-    box-shadow: 0px 5px 15px #888888;
+.navbar-wrapper {
+  background-color: #ce6a00;
+  height: 80px;
 }
 
-img {
-    height: 70px;
+.navbar-wrapper #logo #image-logo {
+  height: 20px;
 }
 
-.navbar-inverse li {
-    display: inline-block;
-    padding:3% 10px 3%;
-    float: right;
+.navbar-wrapper li {
+  list-style: none;
+  color: red;
 }
-
-
-a, a:visited, a:active, a:hover, a:link {
-    color: #baaa99;
-    text-decoration: none;
-}
-
-
-.fa-sign-out-alt {
-}
+/*# sourceMappingURL=Nav.css.map */

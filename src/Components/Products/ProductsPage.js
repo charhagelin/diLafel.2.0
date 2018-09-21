@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import ItemList from "./ItemList";
 // import OrderPage from './OrderPage';
 import OrderList from "../Order/OrderList";
-import "../../Styles/ProductsPage.css";
+import "../../styles/css/ProductsPage.css";
 import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 

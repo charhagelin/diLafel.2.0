@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
-import "../../Styles/AddItemForm.css";
+import "../../styles/css/AddItemForm.css";
 
 class AddItemForm extends Component {
   createItem(event) {

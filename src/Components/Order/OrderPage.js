@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import OrderList from "./OrderList";
-import "../../Styles/OrderPage.css";
+import "../../styles/css/OrderPage.css";
 import OrderProcessForm from "./OrderProcessForm";
 import { Alert } from "react-bootstrap";
 

@@ -1,0 +1,24 @@
+.navbar-wrapper {
+  background-color: #ce6a00;
+  height: 80px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-template: 100%;
+}
+
+.navbar-wrapper #logo #image-logo {
+  padding: 15px 10px;
+  height: 7em;
+}
+
+.navbar-wrapper li {
+  display: inline-block;
+  float: right;
+  padding: 5% 5%;
+  list-style: none;
+  color: #fff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Nav.css.map */

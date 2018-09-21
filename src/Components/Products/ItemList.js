@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../Styles/ItemList.css";
+import "../../styles/css/ItemList.css";
 import { Button } from "react-bootstrap";
 
 class ItemList extends Component {
