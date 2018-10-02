@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../../styles/css/ItemList.css";
-import { Button } from "react-bootstrap";
 
 class ItemList extends Component {
   constructor(props) {
@@ -16,31 +15,30 @@ class ItemList extends Component {
     const deleteFromItemList = this.props.deleteFromItemList;
 
     return (
-      <div className="itemlist-container">
-        <div className="left-itemlist">
+      <div className="itemlist-wrapper">
+        <section className="item-information">
           <h3>{item.name}</h3>
-          <p className="item-desc"> {item.desc} </p>
-        </div>
-        <div className="middle-itemlist">
-          <p className="item-price">
-            {" "}
-            $ {item.price} / {item.unit}{" "}
+          <p>
+            $ {item.price} / {item.unit}
           </p>
-        </div>
-        <div className="right-itemlist">
-          <img src={item.image} className="item-image" alt="Product_img" />
-
-          <Button onClick={e => addToOrder(this.props.index, e)} bsSize="small">
+          <p className="item-desc"> {item.desc} </p>
+          <button
+            onClick={e => addToOrder(this.props.index, e)}
+            className="add-btn"
+          >
             <i className="fas fa-cart-plus" />
-          </Button>
-          <Button
+          </button>
+          <button
             onClick={() => deleteFromItemList(this.props.index)}
-            bsSize="small"
-            bsStyle="danger"
+            className="delete-btn"
           >
             <i className="fas fa-times" />
-          </Button>
-        </div>
+          </button>
+        </section>
+
+        <section className="item-image">
+          <img src={item.image} className="item-image" alt="Product_img" />
+        </section>
       </div>
     );
   }

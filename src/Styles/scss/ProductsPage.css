@@ -1,18 +1,24 @@
 .product-page {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
   margin-top: 5%;
 }
+
 .product-page .order-list-small {
+  -ms-grid-column: 6;
   grid-column: 6/6;
   position: -webkit-sticky;
   position: sticky;
   top: 40px;
   padding-top: 80px;
 }
+
 .product-page .product-item-container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-column: 2/6;
   margin-top: -300px;
 }
-
 /*# sourceMappingURL=ProductsPage.css.map */

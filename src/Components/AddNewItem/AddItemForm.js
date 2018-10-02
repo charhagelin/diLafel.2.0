@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
 import "../../styles/css/AddItemForm.css";
 
 class AddItemForm extends Component {
@@ -20,7 +19,7 @@ class AddItemForm extends Component {
 
   render() {
     return (
-      <div className="add-new-form-container">
+      <div className="add-new-form container">
         <h2 className="headline__add-new-form">Add a new item to the shop:</h2>
         <form
           className="new-item-form"
@@ -60,7 +59,7 @@ class AddItemForm extends Component {
             ref={input => (this.unit = input)}
             required
           >
-            <option>...</option>
+            <option disabled>Select a unit</option>
             <option value="Kg">Kg</option>
             <option value="Box">Box</option>
           </select>
@@ -71,7 +70,7 @@ class AddItemForm extends Component {
             placeholder="image URL"
             required
           />
-          <Button type="submit">+ Add Item</Button>
+          <button type="submit">+ Add</button>
         </form>
       </div>
     );

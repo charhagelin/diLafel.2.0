@@ -1,0 +1,12 @@
+.searchbar-wrapper {
+  width: 150px;
+  background-color: #eae9e7;
+  float: left;
+  margin-left: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 15px;
+  padding: 1%;
+}
+/*# sourceMappingURL=SearchBar.css.map */

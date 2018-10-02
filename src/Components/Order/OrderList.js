@@ -17,12 +17,11 @@ class OrderList extends Component {
       return (
         <div className="order">
           <li key={key}>
-            {" "}
-            {count} {item.unit} {item.name}
             <i
               onClick={() => deleteItem(key)}
               className="far fa-times-circle"
             />
+            {count} {item.unit} {item.name}
           </li>
         </div>
       );
@@ -40,14 +39,17 @@ class OrderList extends Component {
       return prevTotal;
     }, 0);
     return (
-      <div className="order">
+      <div className="orderlist-wrapper">
         <strong>Total : ${total} </strong>
         <br />
         <hr />
-        <div className="order-list">
-          <li>
-            {orderId.map(this.renderOrder)} <strong>Total : ${total} </strong>
-          </li>
+        <div className="orderlist">
+          <ul>
+            <li>
+              {orderId.map(this.renderOrder)}{" "}
+              <strong className="sum-order">Total : ${total} </strong>
+            </li>
+          </ul>
         </div>
         <br />
       </div>

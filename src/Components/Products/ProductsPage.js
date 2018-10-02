@@ -1,18 +1,15 @@
 import React, { Component } from "react";
-// import sampleItems from '../Data/DummyData';
-// import Carousel from './Carousel';
+
 import ItemList from "./ItemList";
-// import OrderPage from './OrderPage';
 import OrderList from "../Order/OrderList";
 import "../../styles/css/ProductsPage.css";
 import { Link } from "react-router-dom";
-import { Col } from "react-bootstrap";
 
 class ProductsPage extends Component {
   render() {
     return (
-      <div className="product-wrap">
-        <Col xs={12} md={2} className="order-list-small">
+      <div className="product-page">
+        <section className="order-list-small">
           <Link to="./order">Go to order</Link>
           <OrderList
             items={this.props.items}
@@ -20,8 +17,8 @@ class ProductsPage extends Component {
             addToOrder={this.props.addToOrder}
             deleteItem={this.props.deleteItem}
           />
-        </Col>
-        <div className="product-item-container">
+        </section>
+        <section className="product-item-container">
           {Object.keys(this.props.items).map(key => (
             <ItemList
               key={key}
@@ -34,7 +31,7 @@ class ProductsPage extends Component {
               deleteFromItemList={index => this.props.deleteFromItemList(index)}
             />
           ))}
-        </div>
+        </section>
       </div>
     );
   }

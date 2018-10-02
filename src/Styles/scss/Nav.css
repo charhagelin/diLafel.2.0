@@ -13,8 +13,8 @@
   height: 7em;
 }
 
-.navbar-wrapper li {
-  display: inline-block;
+.navbar-wrapper ul li {
+  display: inline;
   float: right;
   padding: 5% 5%;
   list-style: none;

@@ -9,8 +9,8 @@
 .orderlist-wrapper .orderlist ul {
   list-style: none;
 }
+
 .orderlist-wrapper .orderlist li:nth-child(even) {
   background-color: #fff3dd;
 }
-
 /*# sourceMappingURL=OrderList.css.map */

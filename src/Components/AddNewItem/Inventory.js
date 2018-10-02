@@ -1,14 +1,22 @@
 import React, { Component } from "react";
 // import AddItemForm from './AddItemForm';
-import { Col, Row } from "react-bootstrap";
 import "../../styles/css/Inventory.css";
 
 class Inventory extends Component {
   constructor() {
     super();
 
+    this.state = {
+      isHidden: true
+    };
+
     this.renderInventory = this.renderInventory.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.toggleHidden = this.toggleHidden.bind(this);
+  }
+
+  toggleHidden() {
+    this.setState({ isHidden: !this.state.isHidden });
   }
 
   handleChange(e, key) {
@@ -24,22 +32,19 @@ class Inventory extends Component {
     const item = this.props.items[key];
 
     return (
-      <div key={key} className="inventory-form-container">
-        <Row>
-          <Col xs={6} md={4}>
-            <label>Name</label>
+      <div key={key} className="inventory-fom">
+        <input
+          className="edit-item-form"
+          value={item.name}
+          name="name"
+          onChange={e => this.handleChange(e, key)}
+          type="text"
+          placeholder="name"
+        />
 
-            <input
-              className="edit-item-form"
-              value={item.name}
-              name="name"
-              onChange={e => this.handleChange(e, key)}
-              type="text"
-              placeholder="name"
-            />
-          </Col>
-          <Col xs={6} md={4}>
-            <label>Price</label>
+        <button onClick={item => this.toggleHidden(item)}>show me</button>
+        {!this.state.isHidden && (
+          <span>
             <input
               className="edit-item-form"
               value={item.price}
@@ -48,35 +53,24 @@ class Inventory extends Component {
               type="number"
               placeholder="Price"
             />
-          </Col>
-          <Col xs={6} md={4}>
-            <label>Unit</label>
             <select
               className="edit-item-form"
               value={item.unit}
               name="unit"
               onChange={e => this.handleChange(e, key)}
-              placeholder="select"
+              placeholder="select unit"
             >
-              <option>...</option>
               <option value="Kg">Kg</option>
               <option value="Box">Box</option>
             </select>
-          </Col>
-        </Row>
-        <label>Description</label>
-
-        <textarea
-          className="edit-item-form-textarea"
-          value={item.desc}
-          type="text"
-          name="desc"
-          onChange={e => this.handleChange(e, key)}
-          placeholder="Description"
-        />
-        <Row>
-          <Col sm={12} md={6}>
-            <label>Tags</label>
+            <textarea
+              className="edit-item-form-textarea"
+              value={item.desc}
+              type="text"
+              name="desc"
+              onChange={e => this.handleChange(e, key)}
+              placeholder="Description"
+            />
             <input
               className="edit-item-form"
               value={item.tags}
@@ -85,9 +79,6 @@ class Inventory extends Component {
               type="text"
               placeholder="Tags"
             />
-          </Col>
-          <Col sm={12} md={6}>
-            <label>image URL</label>
             <input
               className="edit-item-form"
               value={item.image}
@@ -96,19 +87,20 @@ class Inventory extends Component {
               type="text"
               placeholder="image URL"
             />
-          </Col>
-        </Row>
-        <hr />
-        <hr />
+          </span>
+        )}
       </div>
     );
   }
 
   render() {
     return (
-      <div className="inventory-container">
+      <div className="inventory-warpper container">
         <h2>Inventory</h2>
-        {Object.keys(this.props.items).map(this.renderInventory)}
+
+        <span className="inventory">
+          {Object.keys(this.props.items).map(this.renderInventory)}
+        </span>
       </div>
     );
   }
