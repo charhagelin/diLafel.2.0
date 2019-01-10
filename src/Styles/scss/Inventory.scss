@@ -1,14 +1,55 @@
-// .inventory-container {
-//     background-color: #eae9e7;
-//     padding: 10%;
-// }
 
-.inventory-form {
+.inventory-warpper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    input {
-        grid-column: 1 / -1;
+    .inventory-form {
+        grid-column: 1 / 4;
+   
+        input {       
+            border: none;
+            border-bottom: 1px solid black;
+            height: 45px;
+            width: 100%;
+    
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            border: none;
+            border-bottom: 1px solid black;
+            height: 55px;
+            width: 100%;
+    
+            &:focus {
+                outline: none;
+            }
+        }
+        select {
+            border: none;
+            border-bottom: 1px solid black;
+            height: 45px;
+            width: 100%;
+    
+            &:focus {
+                outline: none;
+            }
+    
+            option:first-of-type {
+                color:#999;
+            }
+    
+        }
+        button {
+            color: #fff;
+            width: 100%;
+            box-shadow: none;
+            border: none;
+            height: 55px;
+            background-color: rgb(177, 219, 198);
+    
+    
+        }
     }
-
 }

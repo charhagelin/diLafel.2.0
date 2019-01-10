@@ -1,9 +1,47 @@
-.inventory-form {
+.inventory-warpper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.inventory-form input {
-  grid-column: 1/-1;
+.inventory-warpper .inventory-form {
+  grid-column: 1/4;
+}
+.inventory-warpper .inventory-form input {
+  border: none;
+  border-bottom: 1px solid black;
+  height: 45px;
+  width: 100%;
+}
+.inventory-warpper .inventory-form input:focus {
+  outline: none;
+}
+.inventory-warpper .inventory-form textarea {
+  border: none;
+  border-bottom: 1px solid black;
+  height: 55px;
+  width: 100%;
+}
+.inventory-warpper .inventory-form textarea:focus {
+  outline: none;
+}
+.inventory-warpper .inventory-form select {
+  border: none;
+  border-bottom: 1px solid black;
+  height: 45px;
+  width: 100%;
+}
+.inventory-warpper .inventory-form select:focus {
+  outline: none;
+}
+.inventory-warpper .inventory-form select option:first-of-type {
+  color: #999;
+}
+.inventory-warpper .inventory-form button {
+  color: #fff;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  height: 55px;
+  background-color: #b1dbc6;
 }
 
 /*# sourceMappingURL=Inventory.css.map */
