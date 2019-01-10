@@ -1,12 +1,19 @@
-.product-item-container {
-    padding: 5% 20%;
- 
-}
+.product-page {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 5%;
 
-.shopping-cart-container {
-    margin-top: 50%;
-    width: 14%;
-    float:right;
-    margin-right: 4%;
- 
+
+    .order-list-small {
+        grid-column: 6/6;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 40px;
+        padding-top: 80px;
+    }
+
+    .product-item-container {
+        grid-column: 2/6;
+        margin-top: -300px;
+    }
 }

@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import { Switch, Route, Redirect } from "react-router-dom";
 import OrderPage from "./Components/Order/OrderPage";
 import sampleItems from "./Data/DummyData";
+import "./styles/css/app.css";
 // import ItemList from './Components/ItemList';
 import { app, base } from "./base";
 // import AddItemForm from './Components/AddItemForm';
@@ -171,7 +172,9 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Nav authenticated={this.state.authenticated} />
+        <div className="navbar-container">
+          <Nav authenticated={this.state.authenticated} />
+        </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <AuthenticatedRoute
@@ -213,7 +216,6 @@ class App extends Component {
           />
 
           <Route exact path="/logout" component={LogOut} />
-
           <Route
             exact
             path="/login"

@@ -1,26 +1,42 @@
 .add-new-form {
   padding-top: 5%;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 2;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 2;
+      grid-template-rows: 2;
 }
-.add-new-form x .headline__add-new-form {
+
+.add-new-form x
+.headline__add-new-form {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
   grid-column: 2/3;
+  -ms-grid-row: 1;
   grid-row: 1;
 }
+
 .add-new-form .new-item-form {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
   grid-column: 3/4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1/2;
 }
+
 .add-new-form input {
   border: none;
   border-bottom: 1px solid black;
   height: 45px;
   width: 100%;
 }
+
 .add-new-form input:focus {
   outline: none;
 }
+
 .add-new-form textarea {
   border: none;
   border-bottom: 1px solid black;
@@ -28,28 +44,33 @@
   width: 100%;
   max-width: 285px;
 }
+
 .add-new-form textarea:focus {
   outline: none;
 }
+
 .add-new-form select {
   border: none;
   border-bottom: 1px solid black;
   height: 45px;
   width: 100%;
 }
+
 .add-new-form select:focus {
   outline: none;
 }
+
 .add-new-form select option:first-of-type {
   color: #999;
 }
+
 .add-new-form button {
   color: #fff;
   width: 100%;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border: none;
   height: 35px;
   background-color: orange;
 }
-
 /*# sourceMappingURL=AddItemForm.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,OAAO,EAAE,KAAK;CACjB;;AAED,AAAA,UAAU,CAAC;EACP,KAAK,EAAE,IAAI;CACd;;AAED,AAAA,GAAG,CAAC;EACA,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,MAAM;CACjB",
+    "sources": [
+        "LoginForm.scss"
+    ],
+    "names": [],
+    "file": "LoginForm.css"
+}

@@ -18,8 +18,9 @@ class Nav extends Component {
                         <Link to='/logout'/> 
                         <i className="fas fa-sign-out-alt"></i>
                         </li>
-                        <li href='/admin/add-new-item'> Add <i className="fas fa-plus"></i></li>
-                        <li href='/products'>Products</li>
+
+                        <li><a href='/admin/add-new-item'> Add <i className="fas fa-plus"></i></a></li>
+                        <li><a href='/products'>Products</a></li>
                     </ul>    
                         :<li href='/login'><Link to="/login" >Login/ Register</Link></li>
                     }  

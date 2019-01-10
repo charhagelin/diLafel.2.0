@@ -1,66 +1,67 @@
-.itemlist-container {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;  
-    padding: 5% 5%;
-    background-color: #eae9e7;
+
+.itemlist-wrapper {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding-bottom: 20px;
+
+
+    .item-information {
+        grid-column: 1/2;
+
+        h3 {
+            font-size: 32px;
+            letter-spacing: .1em;
+        }
+    }
+
+    .item-image {
+        grid-column: 3/5;
+        text-align: center;
+        
+        img {
+            width: 350px;
+            height: 250px;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    .add-btn {
+        background-color: rgb(207, 245, 220);
+        height: 40px;
+        width: 40px;
+        border-radius: 20%;
+        -webkit-box-shadow: none !important;
+        box-shadow: none;
+        border: 0;
+        cursor: pointer;
+        .fa-cart-plus {
+            color: rgb(80, 122, 80);
+        }
+    }
+
+    .delete-btn {
+        background-color: rgb(233, 158, 158);
+        height: 40px;
+        width: 40px;
+        border-radius: 20%;
+        -webkit-box-shadow: none !important;
+        box-shadow: none;
+        border: 0;
+        cursor: pointer;
+        .fa-times {
+            color: rgb(117, 56, 56);
+
+        }
+    }
+    button {
+        margin: 5% 2%;
+    }
+      
+ 
+
+
 }
 
-.itemlist-container:first-child {
-    padding-top: 20%;
-    margin-top: -10%;
-}
 
-.itemlist-container:last-child {
-    padding-bottom: 20%;
-    margin-bottom: -10%;
-}
-
-.left-itemlist {
-    width: 40%;
-    flex-flow: column nowrap;
-}
-
- .middle-itemlist {
-    width: 20%;
-    flex-flow: column nowrap;
-    font-weight: bold;
-} 
-
-.right-itemlist {
-    width: 30%;
-    flex-flow: column nowrap;
-}
-  
-.item-image {
-        height: 15em;
-        width: 100%;  
-}
-
-img {
-        object-fit: cover;
-}
-
-.quantity-input {
-    width: 4em;
-    border-radius: 10%;
-    box-shadow: none;
-    border:1px solid #cccccc;
-    height: 30px;
-    margin-top: 5px;
-}
-
-.quantity-form {
-    float: right;
-}
-
-.quantity-label {
-    font-family: serif;
-    padding-right: 10px;
-}
-
-.fa-cart-plus {
-    color: green;
-}

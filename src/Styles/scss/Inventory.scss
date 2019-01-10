@@ -1,35 +1,55 @@
-.inventory-container {
-    background-color: #eae9e7;
-    padding: 10%;
-}
 
-.edit-item-form {
-    display: block;
-    border:1px solid #cccccc;
-    width: 100%; 
+.inventory-warpper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-}
-
-.edit-item-form-textarea {
-    padding: 5%;
-    /* height: 100px; */
-    display: block;
-    border:1px solid #cccccc;
-    width: 100%;  
-}
-
-.edit-item-form {
-    padding: 5%;
-}
-
-.inventory-form {
-    margin-bottom: 10%;
-}
-
-.inventory-form-container hr {
-   border: 1.5px solid black;
-}
-
-.add-item-form-container h2 {
-    font-family: 'Cinzel', serif;
+    .inventory-form {
+        grid-column: 1 / 4;
+   
+        input {       
+            border: none;
+            border-bottom: 1px solid black;
+            height: 45px;
+            width: 100%;
+    
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            border: none;
+            border-bottom: 1px solid black;
+            height: 55px;
+            width: 100%;
+    
+            &:focus {
+                outline: none;
+            }
+        }
+        select {
+            border: none;
+            border-bottom: 1px solid black;
+            height: 45px;
+            width: 100%;
+    
+            &:focus {
+                outline: none;
+            }
+    
+            option:first-of-type {
+                color:#999;
+            }
+    
+        }
+        button {
+            color: #fff;
+            width: 100%;
+            box-shadow: none;
+            border: none;
+            height: 55px;
+            background-color: rgb(177, 219, 198);
+    
+    
+        }
+    }
 }
